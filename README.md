@@ -1,5 +1,5 @@
 # autorecon
-1- RockyEnum.sh dominio.com toma datos con sublister / assetfinder / sudomy, luego saca los duplicados del output y hace un test de dominios con http-probee
+1- RockyEnum.sh dominio.com toma datos con sublister / assetfinder / sudomy, luego saca los duplicados del output y hace un test de dominios con http-probe
 
 2- RockyResponse.sh alive.txt Toma response header de los host vivos mediante curl
 
