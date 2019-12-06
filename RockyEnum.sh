@@ -4,7 +4,10 @@ python /opt/Sublist3r/sublist3r.py -d $1 -v -o domains.txt
 #running assetfinder
 ~/go/bin/assetfinder --subs-only $1 | tee -a domains.txt
 #running Sudomy
-bash /opt/Sudomy/sudomy -d $1
+cd /opt/Sudomy/
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+bash ./sudomy -d $1
 cat /opt/Sudomy/output/$1/subdomain.txt | tee -a domains.txt
 #removing duplicate entries
 sort -u domains.txt -o domains.txt
