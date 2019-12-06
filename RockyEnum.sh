@@ -7,9 +7,10 @@ python /opt/Sublist3r/sublist3r.py -d $1 -v -o domains.txt
 cd /opt/Sudomy/
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-bash ./sudomy -d $1
-cat /opt/Sudomy/output/$1/subdomain.txt | tee -a domains.txt
+bash ./sudomy --no-probe -d $1
+cat /opt/Sudomy/output/$1/subdomain.txt | tee -a /opt/RockySec/domains.txt
 #removing duplicate entries
+cd /opt/RockySec/
 sort -u domains.txt -o domains.txt
 #checking for alive domains
 echo "\n\n[+] Checking for alive domains..\n"
