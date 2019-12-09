@@ -3,6 +3,10 @@
 python /opt/Sublist3r/sublist3r.py -d $1 -v -o domains.txt
 #running assetfinder
 ~/go/bin/assetfinder --subs-only $1 | tee -a domains.txt
+#running subfinder
+~/go/bin/subfinder -d $1 | tee -a domains.txt
+#starting amass enum
+/usr/bin/amass enum -d $1 | tee -a domains.txt
 #running Sudomy
 cd /opt/Sudomy/
 export GOPATH=$HOME/go
